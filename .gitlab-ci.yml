@@ -1,0 +1,28 @@
+stages:
+  - minify
+
+minify_js:
+  image: node:latest
+  stage: minify
+  before_script:
+    - npm install uglify-js -g
+  script:
+    - mkdir -p ./dist
+    - uglifyjs xxx.js --output dist/xxx.min.js
+  artifacts:
+    expire_in: 1 week
+    paths:
+      - dist
+
+minify_css:
+  image: node:latest
+  stage: minify
+  before_script:
+    - npm install uglifycss -g
+  script:
+    - mkdir -p ./dist
+    - uglifycss xxx.css --output dist/xxx.min.css
+  artifacts:
+    expire_in: 1 week
+    paths:
+      - dist
