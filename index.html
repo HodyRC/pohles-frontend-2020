@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="keywords" content="Pohádkový les Rudice, Pohádkový les, Rudice">
+  <meta name="author" content="Lukáš Matuška">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/fa-all.min.css">
+  <!-- Chrome, Firefox OS and Opera -->
+  <meta name="theme-color" id="theme-color" content="green">
+  <!-- Windows Phone -->
+  <meta name="msapplication-navbutton-color" id="msapplication-navbutton-color" content="green">
+  <!-- iOS Safari -->
+  <meta name="apple-mobile-web-app-status-bar-style" id="apple-mobile-web-app-status-bar-style" content="green">
+  <!-- SHARING -->
+  <meta property="og:image" content="/images/background1.jpg" />
+
+  <title>Pohádkový les Rudice</title>
+
+  <script src="/js/jquery-3.4.1.min.js"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="//www.googletagmanager.com/gtag/js?id=UA-144639332-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-144639332-2');
+  </script>
+  <meta property="og:description" content="Zarezervujte si svoje lístky ještě dnes" />
+  <meta property="og:locale" content="CS_cs" />
+</head>
+
+<body>
+  <div class="topbar">
+    <ul class="left hide-on-mobile nav" id="pcNav">
+      <li data-target="home">
+        <a href="#page-header" class="link">Domů</a>
+      </li>
+      <li data-target="info">
+        <a href="#info" class="link">Informace</a>
+      </li>
+      <li data-target="why">
+        <a href="#why" class="link">Proč</a>
+      </li>
+      <li data-target="reservation">
+        <a href="#reservation" class="link">Rezervace</a>
+      </li>
+      <li data-target="feedback">
+        <a href="#feedback" class="link">Zpětná vazba</a>
+      </li>
+    </ul>
+    <!-- Right user part topbar -->
+    <ul class="right hide-on-mobile nav">
+      <li>
+        <a href="/admin/profile" class="no-underline">
+          <img class="circle"
+            src="//scontent-otp1-1.xx.fbcdn.net/v/t1.0-9/64565247_2331560516936489_521965975323541504_o.jpg?_nc_cat=106&_nc_sid=09cbfe&_nc_ohc=1tZ8pcWWe9YAX_8qpBW&_nc_ht=scontent-otp1-1.xx&oh=319b5466ee1f86d17cedb7cff2ab38ec&oe=5E9C65AD"
+            style="max-height: 40px; ">
+        </a>
+      </li>
+      <li>
+        <a href="/logout" class="no-underline">
+          <i class="fas fa-sign-out-alt"></i>
+        </a>
+      </li>
+      <li>
+        <a href="/admin/profile">
+          Lukáš&nbsp;Matuška
+        </a>
+      </li>
+    </ul>
+  </div>
+  <!-- Mobile menu -->
+  <input type="checkbox" id="mobile-menu-overlay-input"
+    class="mobile-menu-overlay-input mobile-menu-overlay-button hide-on-pc" />
+  <label for="mobile-menu-overlay-input" class="mobile-menu-overlay-button hide-on-pc"><span></span></label>
+  <div class="mobile-menu-overlay">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </div>
+
+  <header id="page-header">
+    <div style="background-color: rgba(0, 0, 0, 0.25); width: 100%; ">
+      <div class="container" style="color: white; ">
+        <div class="header-content">
+          <h1>Pohádkový les Rudice</h1>
+          <p class="description">Zarezervujte si svoje lístky ještě dnes.</p>
+          <div class="btn-row">
+            <a class="green btn" href="#reservation">Rezervace</a>
+          </div>
+        </div>
+        <div class="scroll-indicator">
+          <svg viewBox="0 0 70 40">
+            <path fill="#ffffff"
+              d="M61.46 1.46a5 5 0 1 1 7.08 7.08l-6.92 6.9L50 12.95 61.46 1.46z M64.21 12.86L38.54 38.54a5 5 0 0 1-7.08 0l-30-30a5 5 0 0 1 7.08-7.08L35 27.93 54.54 8.39l9.67 4.47z M58.68 18.4L38.54 38.53a5 5 0 0 1-7.08 0l-30-30a5 5 0 0 1 7.08-7.08L35 27.93 38.93 24l19.75-5.6z M26.78 33.85L7.57 14.64l11.34-2.8 7.08 7.08z M10.4 17.47L1.46 8.54a5 5 0 0 1 7.08-7.08l13.64 13.65-11.78 2.36z">
+            </path>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </header>
+  <section id="info" class="main-block info">
+    <div class="container">
+      <h2>Kdy a kde?</h2>
+      <!--<h5>Aneb to nejdůležitější, co potřebuji vědět.</h5>-->
+      <div class="row">
+        <div class="col l6 m12 s12 info-column">
+          <p class="icon no-border"><i class="fas fa-calendar-alt"></i></p>
+          <!--<h4>Kdy?</h4>-->
+          <h3>19. 10. 2019 v&nbsp;15:00</h3>
+        </div>
+        <div class="col l6 m12 s12 info-column">
+          <p class="icon no-border"><i class="fas fa-map-marker-alt green-text"></i></p>
+          <!--<h4>Kde?</h4>-->
+          <h3>Větrný mlýn Rudice</h3>
+        </div>
+      </div>
+      <!--<div class="row">
+        <iframe
+          src="//www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10399.870590854882!2d16.7277772!3d49.3338313!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x4654c893f4774cbf!2zVsSbdHJuw70gbWzDvW4gUnVkaWNl!5e0!3m2!1scs!2scz!4v1567807837996!5m2!1scs!2scz"
+          width="100%" height="100%" frameborder="0" style="border:0; min-height: 50vh;" allowfullscreen=""></iframe>
+      </div>-->
+    </div>
+  </section>
+  <section id="why" class="main-block">
+    <div class="container">
+      <h2>Proč si udělat rezervaci?</h2>
+      <div class="row features">
+        <div class="col l6 m12 s12 info-column">
+          <p class="icon no-border"><i class="fas fa-clock"></i></p>
+          <h3>Jistý plán</h3>
+          <p>Nyní víte na kdy se dostavit, takže nemusíte zbytečně čekat předem.</p>
+        </div>
+        <div class="col l6 m12 s12 info-column">
+          <p class="icon no-border"><i class="fas fa-envelope green-text"></i></p>
+          <h3>Potvrzení rezervace</h3>
+          <p>Potvrzení Vám příjde do emailu.</p>
+        </div>
+      </div>
+      <!--<h5>Aneb jaké budu mít výhody?</h5>
+      <div class="row features">
+        <div class="col l6 m12 hex-column">
+          <div class="hex-box">
+            <div class="hex blue"></div>
+            <div class="hex-icon">
+              <i class="fas fa-clock icon material-icons"></i>
+            </div>
+          </div>
+          <h3>Jistý plán</h3>
+          <p>Nyní víte na kdy se dostavit, takže nemusíte zbytečně čekat předem.</p>
+        </div>
+
+        <div class="col l6 m12 hex-column">
+          <div class="hex-box">
+            <div class="hex green"></div>
+            <div class="hex-icon">
+              <i class="fas fa-check icon material-icons"></i>
+            </div>
+          </div>
+          <h3>Potvrzení rezervace</h3>
+          <p>Potvrzení Vám příjde do emailu.</p>
+        </div>
+      -->
+      <!--
+                <div class="col l4 m12 hex-column">
+                    <div class="hex-box">
+                        <div class="hex grey"></div>
+                        <div class="hex-icon">
+                            <i class="material-icons">cloud</i>
+                        </div>
+                    </div>
+                    <h4>Cloud</h4>
+                    <p>Nemusíte se bát, že by jsme na Vaši rezervaci zapomněli.</p>
+                </div>-->
+    </div>
+  </section>
+  <section id="reservation" class="main-block">
+    <div class="container">
+      <h2>Rezervace</h2>
+      <h5>Pro vytvoření rezervace vyplňte následující formulář</h5>
+      <div class="row">
+        <form class="col s12" action="/reservations/new" method="POST" id="reservation-form">
+          <div class="row">
+            <div class="input-group col m6 s12">
+              <input name="firstname" id="firstname" type="text" required>
+              <span class="bar"></span>
+              <label for="firstname">Křestní jméno</label>
+            </div>
+            <div class="input-group col m6 s12">
+              <input name="lastname" id="lastname" type="text" required>
+              <span class="bar"></span>
+              <label for="lastname">Příjmení</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-group col s12">
+              <input name="email" id="email-input-reservation" type="email" required>
+              <span class="bar"></span>
+              <label for="email-input-reservation">Váš email</label>
+            </div>
+          </div>
+          <!--
+            https://codepen.io/LukyVj/pen/meJqor
+            https://codepen.io/afalchi82/pen/aNXjgb
+            https://codepen.io/suez/pen/CqjBf
+            https://codepen.io/lewisvrobinson/pen/rYrqWv
+          -->
+          <div class="row">
+            <div class="input-group col s12 select-style">
+              <select name="goOutTime" id="goOutTime" required>
+                <option value="">Vyberte čas</option>
+                <option value="15:00">15:00 </option>
+                <option value="15:10">15:10 </option>
+                <option value="15:20">15:20 </option>
+                <option value="15:30">15:30 </option>
+                <option value="15:40">15:40 </option>
+                <option value="15:50">15:50 </option>
+                <option value="16:00">16:00 </option>
+                <option value="16:10">16:10 </option>
+                <option value="16:20">16:20 </option>
+                <option value="16:30">16:30 </option>
+                <option value="16:40">16:40 </option>
+                <option value="16:50">16:50 </option>
+                <option value="17:00">17:00 </option>
+                <option value="17:10">17:10 </option>
+                <option value="17:20">17:20 </option>
+                <option value="17:30">17:30 </option>
+                <option value="17:40">17:40 </option>
+                <option value="17:50">17:50 </option>
+                <option value="18:00">18:00 </option>
+              </select>
+              <label for="goOutTime" class="select-label">Čas</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-group col m6 s12">
+              <input type="number" min="1" max="8" name="countOfChildren" id="countOfChildren" required>
+              <span class="bar"></span>
+              <label>Počet dětí</label>
+            </div>
+            <div class="input-group col m6 s12">
+              <input type="number" min="0" name="countOfAdults" id="countOfAdults" required>
+              <span class="bar"></span>
+              <label>Počet dospělých</label>
+            </div>
+          </div>
+
+
+          <div class="row">
+            <div class="btn-row">
+              <button class="green btn" type="submit">Odeslat</button>
+            </div>
+          </div>
+          <div class="row">
+            <p style="text-align: center; font-size:  95%; border: 0; padding: 0;">
+              V případě problémů nás kontaktujte na emailu
+              <a href="mailto:pohles@rudickamladez.cz">pohles@rudickamladez.cz</a>
+            </p>
+          </div>
+          <div class="row">
+            <p style="text-align: center; font-size:  85%; border: 0; padding: 0;">
+              Odeslání formuláře může chvíli trvat. Údaje poskytnuté v&nbsp;rámci rezervace budou použity
+              jen pro&nbsp;účely této akce.
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+  <section id="feedback" class="main-block">
+    <div class="container">
+      <h2>Zpětná vazba</h2>
+      <h5>Možnost, jak nám dát vědět, co máme vylepšit</h5>
+      <div class="row">
+        <form class="col s12" action="/feedback/new" method="POST" id="feedback-form">
+          <div class="row">
+            <div class="group col s12">
+              <input name="emailForFeedback" id="emailForFeedback" type="email" required>
+              <span class="bar"></span>
+              <label for="emailForFeedback">Email</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="group col s12">
+              <textarea name="text" id="feedback-textarea" required></textarea>
+              <span class="bar"></span>
+              <label for="feedback-textarea">Zpětná vazba</label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="btn-row">
+              <button class="green btn" type="submit">Odeslat</button>
+            </div>
+          </div>
+          <div class="row">
+            <p style="text-align: center; font-size: 100%; border: 0; padding: 0; ">
+              <b style="text-align: left; color: red; ">* </b>
+              Povinné pole
+            </p>
+          </div>
+          <div class="row">
+            <p style="text-align: center; font-size:  85%; border: 0; padding: 0; ">
+              Odeslání formuláře může chvíli trvat.
+            </p>
+          </div>
+          <div class="row">
+            <p style="text-align: center; font-size:  95%; border: 0; padding: 0; ">
+              V případě problémů nás kontaktujte na emailu
+              <a href="mailto:pohles@rudickamladez.cz">pohles@rudickamladez.cz</a>
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+  <!-- <section id="poster" class="main-block">
+    <div class="container">
+      <div class="row">
+        <div class="col s12">
+          <h2>Plakát</h2>
+        </div>
+        <div class="col s12">
+          <picture>-->
+  <!--[if IE 9]><video style='display: none;'><![endif]-->
+  <!--<source srcset="/images/poster2019.webp" type='image/webp'>-->
+  <!--            <source srcset="/images/poster2019.jxr" type='image/vnd.ms-photo'>
+            <source srcset="/images/poster2019.jp2" type='image/jp2'>-->
+  <!--[if IE 9]></video><![endif]-->
+  <!--<img src="/images/poster2019.jpg" width="100" class="lazyload" style="padding-top: 60px; "
+              alt="Plakát pro rok 2019" />-->
+  <!--          </picture>
+        </div>
+      </div>
+    </div>
+  </section>-->
+  <!--<div style="padding-top: 16px; flex-grow: 1; background-color: rgba(2, 184, 2, .8); " id="filler">&nbsp;</div>-->
+  <footer>
+    <div class="footer-copyright">
+      <span>Copyright &copy; 2018 - 2019
+        <a href="mailto:lukynmatuska@gmail.com">Lukáš&nbsp;Matuška</a>
+      </span>
+    </div>
+  </footer>
+  <script>
+    function activateTopbar(params) {
+      var verticalPosition = $(this).scrollTop();
+      $('.link').each(function (event) {
+        if (verticalPosition >= $($(this).attr('href')).offset().top - 1) {
+          $('a.active').removeClass('active');
+          $(this).addClass('active');
+        }
+      });
+    }
+    $(window).ready(activateTopbar);
+    $(window).scroll(activateTopbar);
+  </script>
+</body>
+
+</html>
