@@ -4,7 +4,7 @@
 }
 
 * {
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: 'Rubik', 'IBM Plex', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 *:focus {
@@ -889,7 +889,7 @@ input[type="checkbox"]:checked~.mobile-menu-overlay-button span:after {
 }
 
 .mobile-menu-overlay {
-  height: 30vh;
+  min-height: 30vh;
   width: 100%;
   background: #4caf50 !important;
   z-index: 2;
@@ -907,7 +907,7 @@ input[type="checkbox"]:checked~.mobile-menu-overlay-button span:after {
   align-items: center;
   flex-direction: column;
   text-align: center;
-  height: 25vh;
+  min-height: 25vh;
   padding-left: 0;
   list-style-type: none;
 }

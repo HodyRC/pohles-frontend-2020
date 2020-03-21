@@ -7,8 +7,8 @@ minify_js:
   before_script:
     - npm install uglify-js -g
   script:
-    - mkdir -p ./dist
-    - uglifyjs xxx.js --output dist/xxx.min.js
+    - mkdir -p ./dist/js
+    - uglifyjs js/API.js --output dist/js/API.min.js 
   artifacts:
     expire_in: 1 week
     paths:
@@ -20,8 +20,8 @@ minify_css:
   before_script:
     - npm install uglifycss -g
   script:
-    - mkdir -p ./dist
-    - uglifycss xxx.css --output dist/xxx.min.css
+    - mkdir -p ./dist/css
+    - uglifycss css/style.css --output dist/css/style.min.css
   artifacts:
     expire_in: 1 week
     paths:
