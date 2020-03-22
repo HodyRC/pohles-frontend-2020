@@ -27,15 +27,12 @@
 @keyframes no-hover-v {
     0% {
         transform: scaleX(0);
-        height: 5px;
     }
     45% {
         transform: scaleX(1.05);
-        height: 5px;
     }
     100% {
         transform: scaleX(1.05);
-        height: 5px;
     }
 }
 
