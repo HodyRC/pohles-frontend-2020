@@ -7,8 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="keywords" content="Pohádkový les Rudice, Pohádkový les, Rudice">
   <meta name="author" content="Lukáš Matuška">
-  <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/fa-all.min.css">
+  <link rel="stylesheet" href="/css/animations.css">
+  <link rel="stylesheet" href="/css/style.css">
   <!-- Chrome, Firefox OS and Opera -->
   <meta name="theme-color" id="theme-color" content="green">
   <!-- Windows Phone -->
@@ -21,6 +22,7 @@
   <title>Pohádkový les Rudice</title>
 
   <script src="/js/jquery-3.4.1.min.js"></script>
+  <script src="/js/API.js"></script>
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="//www.googletagmanager.com/gtag/js?id=UA-144639332-2"></script>
   <script>
@@ -53,7 +55,7 @@
         <a href="#feedback" class="link">Zpětná vazba</a>
       </li>
     </ul>
-    <!-- Right user part topbar -->
+    <!-- Right user part topbar -- >
     <ul class="right hide-on-mobile nav">
       <li>
         <a href="/admin/profile" class="no-underline">
@@ -72,7 +74,7 @@
           Lukáš&nbsp;Matuška
         </a>
       </li>
-    </ul>
+    </ul>-->
   </div>
   <!-- Mobile menu -->
   <input type="checkbox" id="mobile-menu-overlay-input"
@@ -80,9 +82,11 @@
   <label for="mobile-menu-overlay-input" class="mobile-menu-overlay-button hide-on-pc"><span></span></label>
   <div class="mobile-menu-overlay">
     <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Contact</a></li>
+      <li><a href="#page-header">Domů</a></li>
+      <li><a href="#info">Informace</a></li>
+      <li><a href="#why">Proč</a></li>
+      <li><a href="#reservation">Rezervace</a></li>
+      <li><a href="#feedback">Zpětná vazba</a></li>
     </ul>
   </div>
 
