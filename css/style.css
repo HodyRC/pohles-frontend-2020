@@ -1,15 +1,5 @@
-/* https://codepen.io/EricPorter/pen/JjPmOOb */
-
-/* https://codepen.io/alvaromontoro/pen/RmRjvg */
-
-@import url('https://fonts.googleapis.com/css?family=Roboto:700');
-@font-face {
-    font-family: 'Trebuchet MS';
-    src: url('/fonts/TrebuchetMS.ttf');
-}
-
 * {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Raleway', sans-serif;
 }
 
 *:focus {
@@ -17,9 +7,6 @@
 }
 
 html {
-    font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;
-    background-position: center;
-    background-repeat: no-repeat;
     scroll-behavior: smooth;
 }
 
@@ -138,14 +125,6 @@ h5 {
     justify-content: center;
 }
 
-/*.main-block:nth-child(odd) {
-  background-color: green;
-}
-
-.main-block:nth-child(even) {
-  background-color: white;
-}*/
-
 #info {
     background-color: #067302;
 }
@@ -200,7 +179,20 @@ h5 {
     text-align: center;
     padding-top: 5vh;
     text-shadow: 1px 2px 8px #000000;
-    border-bottom: 1px solid white;
+}
+
+.main-block .container h2::after {
+    left: 12.5%;
+    right: 12.5%;
+    display: block;
+    position: absolute;
+    width: 75%;
+    height: 2px;
+    margin: auto;
+    margin-top: 15px;
+    content: " ";
+    background: whitesmoke;
+    box-shadow: 1px 2px 8px #000000;
 }
 
 @media only screen and (max-width: 800px), only screen and (max-device-width: 800px) {
@@ -390,6 +382,7 @@ a.no-underline:hover:before {
     display: inline-flex;
     justify-content: center;
     z-index: 3;
+    animation-delay: 2.75s !important;
 }
 
 .topbar.logo {
@@ -701,7 +694,16 @@ input:focus~.highlight, textarea:focus~.highlight {
     animation: showBottomText 1.5s;
     animation-delay: 1s;
     animation-fill-mode: forwards;
-    bottom: 0;
+    /* bottom: 0; */
+    transform: translate(0, 100%);
+}
+
+.fade-up {
+    opacity: 0;
+    animation: showTopText 1.5s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+    /* bottom: 0; */
     transform: translate(0, 100%);
 }
 
@@ -844,6 +846,7 @@ input.mobile-menu-overlay-input {
     z-index: 5;
     cursor: pointer;
     user-select: none;
+    animation-delay: 2.75s !important;
 }
 
 .mobile-menu-overlay-button span {
