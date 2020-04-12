@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="keywords" content="Pohádkový les Rudice, Pohádkový les, Rudice">
     <meta name="author" content="Lukáš Matuška">
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Raleway&display=swap">
+    <!-- <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Raleway&display=swap"> -->
     <link rel="stylesheet" href="css/fa-all.min.css">
     <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/select2.min.css">
@@ -26,9 +26,9 @@
     <title>Pohádkový les Rudice</title>
 
     <script src="js/jquery-3.4.1.min.js"></script>
-    <!-- <script src="js/select2.full.min.js"></script> -->
+    <!-- <script src="js/jquery-3.5.0.slim.min.js"></script> -->
     <script src="js/select2.min.js"></script>
-    <script src="js/API.js"></script>
+    <!-- <script src="js/API.js"></script> -->
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="//www.googletagmanager.com/gtag/js?id=UA-144639332-2"></script>
     <script>
@@ -40,6 +40,12 @@
     </script>
     <meta property="og:description" content="Zarezervujte si svoje lístky ještě dnes" />
     <meta property="og:locale" content="CS_cs" />
+    <style>
+        #info-gmap {
+            min-width: 60vw;
+            min-height: 30vh;
+        }
+    </style>
 </head>
 
 <body>
@@ -128,10 +134,19 @@
                 <div class="col l6 m12 s12 info-column">
                     <p class="icon no-border"><i class="fas fa-calendar-alt"></i></p>
                     <h3>19. 10. 2019 v&nbsp;15:00</h3>
+                    <div class="btn-row m-auto">
+                        <a href="#info" class="no-underline green btn m-auto">
+                            Přidat do kalendáře <i class="fas fa-download"></i></a>
+                    </div>
                 </div>
                 <div class="col l6 m12 s12 info-column">
                     <p class="icon no-border"><i class="fas fa-map-marker-alt green-text"></i></p>
                     <h3>Větrný mlýn Rudice</h3>
+                    <div class="btn-row m-auto">
+                        <a href="https://www.google.com/maps/place/Windmill+Rudice/@49.3338313,16.7277772,15z/data=!4m5!3m4!1s0x0:0x4654c893f4774cbf!8m2!3d49.3338313!4d16.7277772"
+                            target="_blank" class="no-underline green btn m-auto">
+                            Ukázat na mapě <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
