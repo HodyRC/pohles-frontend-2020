@@ -7,10 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="keywords" content="Pohádkový les Rudice, Pohádkový les, Rudice">
     <meta name="author" content="Lukáš Matuška">
-    <link href="//fonts.googleapis.com/css?family=Lato|Raleway&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/fa-all.min.css">
-    <link rel="stylesheet" href="/css/animations.css">
-    <link rel="stylesheet" href="/css/style.css">
+    <!-- <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Raleway&display=swap"> -->
+    <link rel="stylesheet" href="css/fa-all.min.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/select2.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/form.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <!-- Chrome, Firefox OS and Opera -->
     <meta name="theme-color" id="theme-color" content="green">
     <!-- Windows Phone -->
@@ -22,8 +25,10 @@
 
     <title>Pohádkový les Rudice</title>
 
-    <script src="/js/jquery-3.4.1.min.js"></script>
-    <script src="/js/API.js"></script>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <!-- <script src="js/jquery-3.5.0.slim.min.js"></script> -->
+    <script src="js/select2.min.js"></script>
+    <!-- <script src="js/API.js"></script> -->
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="//www.googletagmanager.com/gtag/js?id=UA-144639332-2"></script>
     <script>
@@ -35,6 +40,12 @@
     </script>
     <meta property="og:description" content="Zarezervujte si svoje lístky ještě dnes" />
     <meta property="og:locale" content="CS_cs" />
+    <style>
+        #info-gmap {
+            min-width: 60vw;
+            min-height: 30vh;
+        }
+    </style>
 </head>
 
 <body>
@@ -115,16 +126,27 @@
         </div>
     </header>
     <section id="info" class="main-block info">
+        <div class="bg-img-overlay w-100 min-vh-110">
+        </div>
         <div class="container">
             <h2>Kdy a kde?</h2>
             <div class="row">
                 <div class="col l6 m12 s12 info-column">
                     <p class="icon no-border"><i class="fas fa-calendar-alt"></i></p>
                     <h3>19. 10. 2019 v&nbsp;15:00</h3>
+                    <div class="btn-row m-auto">
+                        <a href="#info" class="no-underline green btn m-auto">
+                            Přidat do kalendáře <i class="fas fa-download"></i></a>
+                    </div>
                 </div>
                 <div class="col l6 m12 s12 info-column">
                     <p class="icon no-border"><i class="fas fa-map-marker-alt green-text"></i></p>
                     <h3>Větrný mlýn Rudice</h3>
+                    <div class="btn-row m-auto">
+                        <a href="https://www.google.com/maps/place/Windmill+Rudice/@49.3338313,16.7277772,15z/data=!4m5!3m4!1s0x0:0x4654c893f4774cbf!8m2!3d49.3338313!4d16.7277772"
+                            target="_blank" class="no-underline green btn m-auto">
+                            Ukázat na mapě <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -186,38 +208,39 @@
             <h2>Rezervace</h2>
             <h5>Pro vytvoření rezervace vyplňte následující formulář</h5>
             <div class="row">
-                <form class="col s12" action="/reservations/new" method="POST" id="reservation-form">
+                <form action="#" class="col w-75" id="new-reservation">
+                    <!-- Counts -->
                     <div class="row">
-                        <div class="input-group col m6 s12">
-                            <input name="firstname" id="firstname" type="text" required>
-                            <span class="bar"></span>
-                            <label for="firstname">Křestní jméno</label>
-                        </div>
-                        <div class="input-group col m6 s12">
-                            <input name="lastname" id="lastname" type="text" required>
-                            <span class="bar"></span>
-                            <label for="lastname">Příjmení</label>
-                        </div>
+                        <fieldset class="col m6 s12 ui-input __first">
+                            <input type="number" id="countOfChildren" name="countOfChildren" tabindex="0" min="1"
+                                required />
+                            <label for="countOfChildren">
+                                <span data-text="Počet dětí">Počet dětí</span>
+                            </label>
+                        </fieldset>
+                        <fieldset class="col s12 m6 ui-input __first">
+                            <input type="number" id="countOfAdults" name="countOfAdults" tabindex="0" min="0" />
+                            <label for="countOfAdults">
+                                <span data-text="Počet dospělých">Počet dospělých</span>
+                            </label>
+                        </fieldset>
                     </div>
-                    <div class="row">
-                        <div class="input-group col s12">
-                            <input name="email" id="email-input-reservation" type="email" required>
-                            <span class="bar"></span>
-                            <label for="email-input-reservation">Váš email</label>
-                        </div>
-                    </div>
-                    <!--
-                https://codepen.io/LukyVj/pen/meJqor
-                https://codepen.io/afalchi82/pen/aNXjgb
-                https://codepen.io/suez/pen/CqjBf
-                https://codepen.io/lewisvrobinson/pen/rYrqWv
 
-                https://codepen.io/cbp/details/XJGQqZ
-              -->
+                    <!-- Email -->
                     <div class="row">
-                        <div class="input-group col s12 select-style">
+                        <fieldset class="col m12 ui-input __third">
+                            <input type="email" id="email" tabindex="0" required>
+                            <label for="email">
+                                <span data-text="E-mail">E-mail</span>
+                            </label>
+                        </fieldset>
+                    </div>
+
+                    <!-- Time select -->
+                    <div class="row">
+                        <div class="col s12 w-100 mt-15">
                             <select name="goOutTime" id="goOutTime" required>
-                                <option value="">Vyberte čas</option>
+                                <option value="">Vyberte si čas</option>
                                 <option value="15:00">15:00 </option>
                                 <option value="15:10">15:10 </option>
                                 <option value="15:20">15:20 </option>
@@ -238,42 +261,41 @@
                                 <option value="17:50">17:50 </option>
                                 <option value="18:00">18:00 </option>
                             </select>
-                            <label for="goOutTime" class="select-label">Čas</label>
+                            <!-- <label for="goOutTime">Čas</label> -->
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="input-group col m6 s12">
-                            <input type="number" min="1" max="8" name="countOfChildren" id="countOfChildren" required>
-                            <span class="bar"></span>
-                            <label>Počet dětí</label>
-                        </div>
-                        <div class="input-group col m6 s12">
-                            <input type="number" min="0" name="countOfAdults" id="countOfAdults" required>
-                            <span class="bar"></span>
-                            <label>Počet dospělých</label>
-                        </div>
-                    </div>
-
 
                     <div class="row">
                         <div class="btn-row">
-                            <button class="green btn" type="submit">Odeslat</button>
+                            <button class="green btn" type="submit">Rezervovat</button>
                         </div>
                     </div>
                     <div class="row">
-                        <p style="text-align: center; font-size:  95%; border: 0; padding: 0;">
+                        <p class="t-center b-0" style="border: 0; padding: 0; ">
+                            <b style="text-align: left; color: red; ">* </b>
+                            Povinné pole
+                        </p>
+                    </div>
+                    <div class="row">
+                        <p style="text-align: center; font-size:  85%; border: 0; padding: 0; ">
+                            Odeslání formuláře může chvíli trvat.
+                        </p>
+                    </div>
+                    <div class="row">
+                        <p style="text-align: center; font-size:  95%; border: 0; padding: 0; ">
                             V případě problémů nás kontaktujte na emailu
                             <a href="mailto:pohles@rudickamladez.cz">pohles@rudickamladez.cz</a>
                         </p>
                     </div>
-                    <div class="row">
-                        <p style="text-align: center; font-size:  85%; border: 0; padding: 0;">
-                            Odeslání formuláře může chvíli trvat. Údaje poskytnuté v&nbsp;rámci rezervace budou použity
-                            jen pro&nbsp;účely této akce.
-                        </p>
-                    </div>
                 </form>
             </div>
+            <!--
+                https://codepen.io/LukyVj/pen/meJqor
+                https://codepen.io/afalchi82/pen/aNXjgb
+                https://codepen.io/suez/pen/CqjBf
+
+                https://codepen.io/cbp/details/XJGQqZ
+              -->
         </div>
     </section>
     <section id="feedback" class="main-block">
@@ -352,6 +374,66 @@
         </div>
     </footer>
     <script>
+        // Initialize and add the map
+        function initMap() {
+            // The location of Uluru
+            var uluru = { lat: 49.3338313, lng: 16.7277772 };
+            // The map, centered at Uluru
+            var map = new google.maps.Map(
+                document.getElementById('info-gmap'), { zoom: 12, center: uluru });
+            // The marker, positioned at Uluru
+            var marker = new google.maps.Marker({ position: uluru, map: map });
+        }
+    </script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxoAPofUrN8OAK8aqjPdUfI-nPd9ajQls&callback=initMap">
+        </script>
+    <script>
+        var $input = $('.form-fieldset > input');
+        $input.blur(function (e) {
+            $(this).toggleClass('filled', !!$(this).val());
+        });
+
+        $(document).ready(function () {
+            $('#goOutTime').select2({
+                // theme: 'material'
+                width: '75%'
+            });
+        })
+
+        function child(i, insertAfter) {
+            $('<div>', { class: 'children-row' }).append(
+                $('<div>', { class: 'row' }).append(
+                    $('<span>', { class: 'm-auto mt-15' }).text(i + '. dítě'),
+                ),
+                $('<div>', { class: 'row' }).append(
+                    $('<fieldset>', { class: "col m6 s12 ui-input" }).append(
+                        $('<input>', { type: 'text', id: 'firstname' + i, name: 'firstname[]', tabindex: '0', required: 'required' }),
+                        $('<label>', { for: 'firstname' + i }).append(
+                            $('<span>', { 'data-text': "Křestní jméno" }).text('Křestní jméno')
+                        )
+                    ),
+                    $('<fieldset>', { class: 'col m6 s12 ui-input' }).append(
+                        $('<input>', { type: 'text', id: 'lastname' + i, name: 'lastname[]', tabindex: '0', required: 'required' }),
+                        $('<label>', { for: 'lastname' + i }).append(
+                            $('<span>', { 'data-text': 'Příjmení' }).text('Příjmení')
+                        )
+                    )
+                )
+            ).insertAfter(insertAfter);
+        }
+
+        $('input#countOfChildren').change(function () {
+            var length = $('.children-row').length;
+            if (length === 0) {
+                child($('.children-row').length + 1, $('#email').parent().parent())
+            } else if (length > $(this).val()) {
+                $('.children-row').last().remove()
+            } else {
+                child($('.children-row').length + 1, $('.children-row').last())
+            }
+        })
+
         function activateTopbar(params) {
             var verticalPosition = $(this).scrollTop();
             $('.link').each(function (event) {
