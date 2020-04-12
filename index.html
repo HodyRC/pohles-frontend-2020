@@ -151,41 +151,6 @@
                     <p>Potvrzení Vám příjde do emailu.</p>
                 </div>
             </div>
-            <!--<h5>Aneb jaké budu mít výhody?</h5>
-          <div class="row features">
-            <div class="col l6 m12 hex-column">
-              <div class="hex-box">
-                <div class="hex blue"></div>
-                <div class="hex-icon">
-                  <i class="fas fa-clock icon material-icons"></i>
-                </div>
-              </div>
-              <h3>Jistý plán</h3>
-              <p>Nyní víte na kdy se dostavit, takže nemusíte zbytečně čekat předem.</p>
-            </div>
-    
-            <div class="col l6 m12 hex-column">
-              <div class="hex-box">
-                <div class="hex green"></div>
-                <div class="hex-icon">
-                  <i class="fas fa-check icon material-icons"></i>
-                </div>
-              </div>
-              <h3>Potvrzení rezervace</h3>
-              <p>Potvrzení Vám příjde do emailu.</p>
-            </div>
-          -->
-            <!--
-                    <div class="col l4 m12 hex-column">
-                        <div class="hex-box">
-                            <div class="hex grey"></div>
-                            <div class="hex-icon">
-                                <i class="material-icons">cloud</i>
-                            </div>
-                        </div>
-                        <h4>Cloud</h4>
-                        <p>Nemusíte se bát, že by jsme na Vaši rezervaci zapomněli.</p>
-                    </div>-->
         </div>
     </section>
     <section id="reservation" class="main-block">
@@ -288,20 +253,26 @@
             <h2>Zpětná vazba</h2>
             <h5>Možnost, jak nám dát vědět, co máme vylepšit</h5>
             <div class="row">
-                <form class="col s12" action="/feedback/new" method="POST" id="feedback-form">
+                <!-- <form class="col s12" action="/feedback/new" method="POST" id="feedback-form"> -->
+                <form class="col s12" id="feedback-form">
+                    <!-- Email -->
                     <div class="row">
-                        <div class="group col s12">
-                            <input name="emailForFeedback" id="emailForFeedback" type="email" required>
-                            <span class="bar"></span>
-                            <label for="emailForFeedback">Email</label>
-                        </div>
+                        <fieldset class="col m12 ui-input __third">
+                            <input type="email" id="emailForFeedback" tabindex="0" required>
+                            <label for="emailForFeedback">
+                                <span data-text="E-mail">E-mail</span>
+                            </label>
+                        </fieldset>
                     </div>
+
+                    <!-- Feedback -->
                     <div class="row">
-                        <div class="group col s12">
+                        <fieldset class="col m12 ui-input __third">
                             <textarea name="text" id="feedback-textarea" required></textarea>
-                            <span class="bar"></span>
-                            <label for="feedback-textarea">Zpětná vazba</label>
-                        </div>
+                            <label for="feedback-textarea">
+                                <span data-text="Zpětná vazba">Zpětná vazba</span>
+                            </label>
+                        </fieldset>
                     </div>
 
                     <div class="row">
@@ -403,7 +374,7 @@
                 child($('.children-row').length + 1, $('.children-row').last())
             }
         })
-        
+
         function activateTopbar(params) {
             var verticalPosition = $(this).scrollTop();
             $('.link').each(function (event) {

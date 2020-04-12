@@ -9,7 +9,7 @@
     border-top: 0px;
 }
 
-.ui-input input {
+.ui-input input, .ui-input textarea {
     border: 0;
     background: none;
     background: transparent;
@@ -24,7 +24,7 @@
 
 /* Chrome, Safari, Edge, Opera */
 
-.ui-input input::-webkit-outer-spin-button, .ui-input input::-webkit-inner-spin-button {
+.ui-input input::-webkit-outer-spin-button, .ui-input input::-webkit-inner-spin-button, .ui-input textarea::-webkit-outer-spin-button, .ui-input textarea::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
@@ -35,7 +35,7 @@
     -moz-appearance: textfield;
 }
 
-.ui-input input+label {
+.ui-input input+label, .ui-input textarea+label {
     position: relative;
     display: block;
     padding: 0px;
@@ -45,7 +45,7 @@
     text-align: left;
 }
 
-.ui-input input+label::before, .ui-input input+label::after {
+.ui-input textarea+label::before, .ui-input textarea+label::after, .ui-input input+label::before, .ui-input input+label::after {
     position: absolute;
     top: -5px;
     left: 0;
@@ -54,13 +54,13 @@
     height: 1px;
 }
 
-.ui-input input+label::before {
+.ui-input input+label::before, .ui-input textarea+label::before {
     background-color: rgba(255, 255, 255, 0.2);
     background-color: whitesmoke;
     box-shadow: 0.5px 1px 2px #000000;
 }
 
-.ui-input input+label::after {
+.ui-input input+label::after, .ui-input textarea+label::after {
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 300ms cubic-bezier(0.215, 0.61, 0.355, 1);
@@ -68,7 +68,7 @@
     height: 2px;
 }
 
-.ui-input input+label span {
+.ui-input input+label span, .ui-input textarea+label span {
     position: absolute;
     top: 0;
     left: 0;
@@ -77,7 +77,7 @@
     transition: color 300ms cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
-.ui-input input+label span::after {
+.ui-input input+label span::after, .ui-input textarea+label span::after {
     content: attr(data-text);
     position: absolute;
     overflow: hidden;
@@ -96,53 +96,55 @@
     transition: background-position 300ms cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
-.ui-input input:focus+label::after, .ui-input input.error+label::after, .ui-input input:invalid+label::after, .ui-input input.filled+label::after {
+.ui-input input:focus+label::after, .ui-input input.error+label::after, .ui-input input:invalid+label::after, .ui-input input.filled+label::after, .ui-input textarea:focus+label::after, .ui-input textarea.error+label::after, .ui-input textarea:invalid+label::after, .ui-input textarea.filled+label::after {
     transform: scaleX(1);
     transform-origin: left;
 }
 
-.ui-input input:focus+label span::after, .ui-input input.error+label span::after, .ui-input input:invalid+label span::after, .ui-input input.filled+label span::after {
+.ui-input input:focus+label span::after, .ui-input input.error+label span::after, .ui-input input:invalid+label span::after, .ui-input input.filled+label span::after, .ui-input textarea:focus+label span::after, .ui-input textarea.error+label span::after, .ui-input textarea:invalid+label span::after, .ui-input textarea.filled+label span::after {
     background-image: linear-gradient(to right, white 50%, rgba(255, 255, 255, 0) 0%);
     background-position: 0% 50%;
 }
 
-.ui-input input.filled {
+.ui-input input.filled, .ui-input textarea.filled {
     color: rgba(0, 255, 0, 0.95);
     color: green;
     color: whitesmoke;
 }
 
-.ui-input input.filled+label::after {
+.ui-input input.filled+label::after, .ui-input textarea.filled+label::after {
     background-color: green;
 }
 
-.ui-input input.filled+label span::after {
+.ui-input input.filled+label span::after, .ui-input textarea.filled+label span::after {
     background-image: linear-gradient(to right, white 50%, rgba(255, 255, 255, 0) 0%);
     background-position: 0% 50%;
 }
 
-.ui-input input:focus {
+.ui-input input:focus, .ui-input textarea:focus {
     color: whitesmoke;
 }
 
-.ui-input input:focus+label::after {
+.ui-input input:focus+label::after, .ui-input textarea:focus+label::after {
     background-color: green;
 }
 
-.ui-input input:focus+label span::after {
+.ui-input input:focus+label span::after, .ui-input textarea:focus+label span::after {
     background-image: linear-gradient(to right, white 50%, rgba(255, 255, 255, 0) 0%);
     background-position: 0% 50%;
 }
 
-.ui-input input.error, .ui-input input:invalid {
+.ui-input input.error, .ui-input input:invalid, .ui-input textarea.error, .ui-input textarea:invalid {
     color: #E66161;
 }
 
-.ui-input input.error+label::after, .ui-input input:invalid+label::after {
+.ui-input input.error+label::after, .ui-input input:invalid+label::after,
+.ui-input textarea.error+label::after, .ui-input textarea:invalid+label::after {
     background-color: #E66161;
 }
 
-.ui-input input.error+label span::after, .ui-input input:invalid+label span::after {
+.ui-input input.error+label span::after, .ui-input input:invalid+label span::after,
+.ui-input textarea.error+label span::after, .ui-input textarea:invalid+label span::after {
     background-image: linear-gradient(to right, #E66161 50%, rgba(255, 255, 255, 0) 0%);
     background-position: 0% 50%;
 }
