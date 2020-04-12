@@ -21,8 +21,7 @@ minify_css:
     - npm install uglifycss -g
   script:
     - mkdir -p ./dist/css
-    - uglifycss css/style.css --output dist/css/style.min.css
-    - uglifycss css/animations.css --output dist/css/animations.min.css
+    - uglifycss css/style.css css/animations.css css/form.css --output dist/css/style.min.css
   artifacts:
     expire_in: 1 week
     paths:
