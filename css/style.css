@@ -213,8 +213,8 @@ h5 {
 }
 
 .main {
-    background-image: url('../images/background1.jpg');
-    background: url('../images/background1.jpg') center center no-repeat;
+    background-image: url('../images/mohammad-saifullah-M6uf_F0jdPs-unsplash_tiny_edited30.jpg');
+    background: url('../images/mohammad-saifullah-M6uf_F0jdPs-unsplash_tiny_edited30.jpg') center center no-repeat;
     background-size: cover;
 }
 
@@ -521,7 +521,7 @@ a.no-underline:hover:before {
 /* End of scrollbar */
 
 .header {
-    background: url('../images/background.jpg') center center no-repeat;
+    /* background: url('../images/background.jpg') center center no-repeat; */
     background-size: cover;
     min-height: 100vh;
     width: 100% !important;
@@ -548,6 +548,9 @@ a.no-underline:hover:before {
     font-weight: 400;
     text-align: center;
     color: white;
+    max-width: 75%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 @media only screen and (max-width:600px) {
@@ -724,7 +727,7 @@ a.no-underline:hover:before {
 footer {
     display: flex;
     color: whitesmoke;
-    background-color: green;
+    background-color: black;
     min-height: 50px;
 }
 
